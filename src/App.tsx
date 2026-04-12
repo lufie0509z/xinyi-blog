@@ -60,15 +60,17 @@ export default function App() {
         
         {/* Header */}
         <header className="mb-16">
-          <h1 className="text-3xl font-bold tracking-tight mb-4">Alex Zhang</h1>
+          <h1 className="text-3xl font-bold tracking-tight mb-4">Zoey (Xinyi) Zhang</h1>
           <p className="text-lg text-slate-500 leading-relaxed">
-            Software Engineer. Focused on building robust backend systems and intuitive digital experiences.
+            Software Developer.
           </p>
           <div className="mt-8 flex items-center gap-6">
-            <a href="mailto:hello@alexzhang.dev" className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-emerald-500 hover:opacity-80 transition-all">
-              Email
+            <a href="/assets/ZoeyZhang_Software Developer.pdf" target="_blank" rel="noreferrer" className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-emerald-500 hover:opacity-80 transition-all flex items-center gap-2">
+              <ExternalLink className="w-4 h-4" />
+              Download CV
             </a>
-            <a href="#" className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-emerald-500 hover:opacity-80 transition-all">
+            <a href="https://www.linkedin.com/in/xinyi-zhang-a23594243" target="_blank" rel="noreferrer" className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-emerald-500 hover:opacity-80 transition-all flex items-center gap-2">
+              <Linkedin className="w-4 h-4" />
               LinkedIn
             </a>
             <a href="#" className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-emerald-500 hover:opacity-80 transition-all">
@@ -151,9 +153,9 @@ export default function App() {
         <footer className="pt-16 border-t border-slate-200">
           <div className="flex justify-between items-center">
             <p className="text-xs text-slate-400">
-              © 2026 Alex Zhang
+              © 2026 Zoey (Xinyi) Zhang
             </p>
-            <a href="mailto:hello@alexzhang.dev" className="text-xs font-bold uppercase tracking-widest text-slate-900 hover:text-brand-600 transition-colors flex items-center gap-2">
+            <a href="https://www.linkedin.com/in/xinyi-zhang-a23594243" target="_blank" rel="noreferrer" className="text-xs font-bold uppercase tracking-widest text-slate-900 hover:text-brand-600 transition-colors flex items-center gap-2">
               Contact
               <ArrowRight className="w-3 h-3" />
             </a>
