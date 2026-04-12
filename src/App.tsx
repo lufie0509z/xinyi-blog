@@ -40,16 +40,49 @@ const SKILLS = [
 
 const EXPERIENCE = [
   {
-    company: "Tech Innovators Inc.",
-    role: "Software Engineering Intern",
-    period: "2025",
-    description: "Optimized backend microservices, reducing API latency by 30%. Implemented automated testing suites."
+    company: "Rimlys",
+    role: "Software Engineer, Aarhus, Denmark",
+    period: "Dec.2025 - Present",
+    description: "Built and launched Klar (Danish-learning app) with a Next.js frontend and Rust backend; deployed on GCP with automated CI/CD. Implemented vocabulary flashcards with spaced repetition (FSRS), daily practice workflows, and AI features (daily story/comic + text-to-speech)."
   },
   {
-    company: "University CS Lab",
-    role: "Research Assistant",
-    period: "2024 - 2025",
-    description: "Developed visualization tools for distributed systems research."
+    company: "TikTok / Bytedance",
+    role: "Software Engineer (Intern)",
+    period: "Jun.2024 - Mar.2025",
+    description: "Worked on JASH (V8-based JS runtime) — optimized execution via ExternalString and CodeCache for ~5× speedup and reduced memory; built C++↔JS bindings. Refactored modules and improved CI/CD reliability; fixed cross-platform build/test issues across V8 and Chromium components."
+  },
+  {
+    company: "MartixPort (Remote, Singapore)",
+    role: "Quantitative Developer (Contract)",
+    period: "May.2024 - Nov.2024",
+    description: "Built a real-time risk-control gateway and an asynchronous WebSocket market-data pipeline; developed an OMS for pre-trade checks and order lifecycle routing. Implemented shared-memory IPC for sub-microsecond communication and managed AWS infrastructure and monitoring/alerting."
+  },
+  {
+    company: "Xcalibyte (acquired by Alibaba)",
+    role: "Software Engineer (Intern)",
+    period: "Nov.2022 - Nov.2023",
+    description: "Extended Clang-based SAST (Labrador) with AST visitors; implemented MISRA C/C++ rules (zero FPs) and helped obtain ISO 26262 certification. Built CI/CD and integrated scanner into enterprise workflows."
+  },
+  {
+    company: "Chaitin Technology (Alibaba subsidiary)",
+    role: "Cybersecurity Engineer (Intern)",
+    period: "Oct.2021 - Apr.2022",
+    description: "Built VM-based intelligent semantic-analysis WAF for vulnerability scanning; customized RapidJSON parsing and implemented distributed async checks with Redis; ported VM to ARM and explored WASM integration; deployed services via Docker/Kubernetes."
+  }
+];
+
+const EDUCATION = [
+  {
+    institution: "Nankai University (NKU), Tianjin, China",
+    degree: "Master of Computer Science",
+    period: "Sep.2022 - Jun.2025",
+    description: "Graduate studies in Computer Science."
+  },
+  {
+    institution: "University of Science and Technology Beijing (USTB), Beijing, China",
+    degree: "Bachelor of Computer Science",
+    period: "Sep.2018 - Jun.2022",
+    description: "GPA: 3.87/4.00 — Ranking: 4/163 (top 2.50%)."
   }
 ];
 
@@ -79,9 +112,9 @@ export default function App() {
           </div>
         </header>
 
-        {/* Section: Experience */}
+        {/* Section: Work Experience */}
         <section className="mb-16">
-          <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-8">Experience</h2>
+          <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-8">Work Experience</h2>
           <div className="space-y-10">
             {EXPERIENCE.map((exp) => (
               <div key={exp.company}>
@@ -92,6 +125,25 @@ export default function App() {
                 <div className="text-sm text-slate-400 mb-3">{exp.company}</div>
                 <p className="text-slate-500 leading-relaxed text-sm max-w-lg">
                   {exp.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Section: Education */}
+        <section className="mb-16">
+          <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-8">Education</h2>
+          <div className="space-y-8">
+            {EDUCATION.map((edu) => (
+              <div key={edu.institution}>
+                <div className="flex justify-between items-baseline mb-1">
+                  <h3 className="text-base font-semibold">{edu.degree}</h3>
+                  <span className="text-xs font-mono text-slate-400">{edu.period}</span>
+                </div>
+                <div className="text-sm text-slate-400 mb-3">{edu.institution}</div>
+                <p className="text-slate-500 leading-relaxed text-sm max-w-lg">
+                  {edu.description}
                 </p>
               </div>
             ))}
