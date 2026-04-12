@@ -114,7 +114,7 @@ export default function App() {
 
         {/* Section: Work Experience */}
         <section className="mb-16">
-          <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-8">Work Experience</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-700 mb-8">Work Experience</h2>
           <div className="space-y-10">
             {EXPERIENCE.map((exp) => (
               <div key={exp.company}>
@@ -133,7 +133,7 @@ export default function App() {
 
         {/* Section: Education */}
         <section className="mb-16">
-          <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-8">Education</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-700 mb-8">Education</h2>
           <div className="space-y-8">
             {EDUCATION.map((edu) => (
               <div key={edu.institution}>
@@ -152,7 +152,7 @@ export default function App() {
 
         {/* Section: Projects */}
         <section className="mb-16">
-          <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-8">Projects</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-700 mb-8">Projects</h2>
           <div className="space-y-10">
             {PROJECTS.map((project) => (
               <div key={project.title}>
@@ -184,7 +184,7 @@ export default function App() {
 
         {/* Section: Skills */}
         <section className="mb-16">
-          <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-8">Skills</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-700 mb-8">Skills</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10">
             {SKILLS.map((skillGroup) => (
               <div key={skillGroup.category}>
