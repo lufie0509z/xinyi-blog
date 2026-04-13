@@ -43,31 +43,31 @@ const EXPERIENCE = [
     company: "Rimlys",
     role: "Software Engineer, Aarhus, Denmark",
     period: "Dec.2025 - Present",
-    description: "Built and launched Klar (Danish-learning app) with a Next.js frontend and Rust backend; deployed on GCP with automated CI/CD. Implemented vocabulary flashcards with spaced repetition (FSRS), daily practice workflows, and AI features (daily story/comic + text-to-speech)."
+    description: "Built Klar (Danish-learning app) with a Next.js frontend and Rust backend and deployed it on GCP with automated CI/CD. Implemented spaced-repetition flashcards, daily practice flows, and AI-generated content with TTS."
   },
   {
     company: "TikTok / Bytedance",
     role: "Software Engineer (Intern)",
     period: "Jun.2024 - Mar.2025",
-    description: "Worked on JASH (V8-based JS runtime) — optimized execution via ExternalString and CodeCache for ~5× speedup and reduced memory; built C++↔JS bindings. Refactored modules and improved CI/CD reliability; fixed cross-platform build/test issues across V8 and Chromium components."
+    description: "Optimized a V8-based JS runtime (JASH) using ExternalString and CodeCache for ~5× speedup and lower memory, and implemented C++↔JS bindings. Refactored modules and improved CI/CD reliability, resolving cross-platform build and test failures."
   },
   {
     company: "MartixPort (Remote, Singapore)",
     role: "Quantitative Developer (Contract)",
     period: "May.2024 - Nov.2024",
-    description: "Built a real-time risk-control gateway and an asynchronous WebSocket market-data pipeline; developed an OMS for pre-trade checks and order lifecycle routing. Implemented shared-memory IPC for sub-microsecond communication and managed AWS infrastructure and monitoring/alerting."
+    description: "Built a real-time risk-control gateway, asynchronous WebSocket market-data pipeline, and an OMS for pre-trade checks and order routing. Implemented shared-memory IPC for sub-microsecond messaging and managed AWS infrastructure plus monitoring/alerting."
   },
   {
     company: "Xcalibyte (acquired by Alibaba)",
     role: "Software Engineer (Intern)",
     period: "Nov.2022 - Nov.2023",
-    description: "Extended Clang-based SAST (Labrador) with AST visitors; implemented MISRA C/C++ rules (zero FPs) and helped obtain ISO 26262 certification. Built CI/CD and integrated scanner into enterprise workflows."
+    description: "Extended a Clang-based SAST (Labrador) with AST visitors and implemented MISRA C/C++ rules, achieving zero false positives and ISO 26262 certification. Built CI/CD pipelines and integrated the scanner into enterprise workflows."
   },
   {
     company: "Chaitin Technology (Alibaba subsidiary)",
     role: "Cybersecurity Engineer (Intern)",
     period: "Oct.2021 - Apr.2022",
-    description: "Built VM-based intelligent semantic-analysis WAF for vulnerability scanning; customized RapidJSON parsing and implemented distributed async checks with Redis; ported VM to ARM and explored WASM integration; deployed services via Docker/Kubernetes."
+    description: "Built a VM-based semantic-analysis WAF for vulnerability scanning and customized JSON parsing for robustness. Implemented distributed async checks with Redis, ported the VM to ARM, explored WASM integration, and deployed services with Docker/Kubernetes."
   }
 ];
 
