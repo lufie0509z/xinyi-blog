@@ -3,31 +3,42 @@ import {
   Github, 
   Linkedin, 
   Mail, 
-  ExternalLink,
-  ArrowRight
+  ExternalLink
 } from "lucide-react";
 
-const PROJECTS = [
+type Project = {
+  title: string;
+  period: string;
+  description: string;
+  tags: string[];
+  link?: string;
+  github?: string;
+};
+
+const PROJECTS: Project[] = [
   {
-    title: "CloudScale Analytics",
-    description: "A real-time data processing engine built with Go and React. Handles millions of events per second with sub-millisecond latency.",
-    tags: ["Go", "React", "Redis"],
-    link: "#",
-    github: "#"
+    title: "X86-Based OS Kernel Development",
+    period: "Feb.2023 - Jun.2023",
+    description: "Implemented core operating system components from bootstrapping through scheduling on x86.",
+    tags: ["x86", "OS Kernel", "Virtual Memory", "File System", "Bootloader"]
   },
   {
-    title: "DevFlow IDE",
-    description: "A browser-based code editor with built-in collaboration features and integrated terminal support.",
-    tags: ["TypeScript", "Node.js", "WebSockets"],
-    link: "#",
-    github: "#"
+    title: "Compilation System Design Based on SysY",
+    period: "Jun.2021 - Oct.2021",
+    description: "Designed and implemented the front end of a compiler for the SysY language.",
+    tags: ["Compiler", "SysY", "Lexer", "Parser", "Semantic Analysis"]
   },
   {
-    title: "NeuralViz",
-    description: "Interactive 3D visualization of neural network architectures and training progress using Three.js.",
-    tags: ["Python", "Three.js", "React"],
-    link: "#",
-    github: "#"
+    title: "ELFSign & Kui",
+    period: "Oct.2020 - Jan.2021",
+    description: "Built a kernel-based signature and verification system to secure ELF binaries.",
+    tags: ["Linux Kernel", "ELF", "RSA", "ftrace", "Multi-Architecture"]
+  },
+  {
+    title: "Aspect-Based Sentiment Analysis",
+    period: "Apr.2020 - Aug.2020",
+    description: "Built an NLP pipeline for aspect-based sentiment analysis with sequence labeling and LSTM modeling.",
+    tags: ["NLP", "LSTM", "Keras", "BIO Tagging", "Model Evaluation"]
   }
 ];
 
@@ -55,7 +66,7 @@ const EXPERIENCE = [
   description: "Optimized a V8-based JS runtime (JASH) with ExternalString and CodeCache for ~5× speedup and lower memory, implemented C++↔JS bindings, and improved CI/CD to fix cross-platform build/test failures."
   },
   {
-    company: "MartixPort (Rebranded as Bit Quant by 2026)",
+    company: "MartixPort (Rebranded as Bit Quant now)",
     role: "Quantitative Developer (Part-time)",
     location: "Remote (Singapore)",
     period: "May.2024 - Nov.2024",
@@ -152,9 +163,9 @@ export default function App() {
                 <div className="flex justify-between items-start mb-1">
                   <div>
                     {exp.link ? (
-                      <a href={exp.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:underline">
-                        <span className="text-[17px] md:text-[18px] font-semibold text-slate-700">{exp.company}</span>
-                        <ExternalLink className="w-3 h-3 text-slate-400" />
+                      <a href={exp.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-slate-700 hover:text-teal-600 transition-colors">
+                        <span className="text-[17px] md:text-[18px] font-semibold">{exp.company}</span>
+                        <ExternalLink className="w-3 h-3" />
                       </a>
                     ) : (
                       <span className="text-[17px] md:text-[18px] font-semibold text-slate-700">{exp.company}</span>
@@ -199,18 +210,27 @@ export default function App() {
           <div className="space-y-10">
             {PROJECTS.map((project) => (
               <div key={project.title}>
-                <div className="flex justify-between items-center mb-1">
-                  <h3 className="text-[17px] font-semibold">{project.title}</h3>
-                  <div className="flex gap-4">
-                    <a href={project.github} className="text-slate-300 hover:text-slate-900 transition-colors">
-                      <Github className="w-4 h-4" />
-                    </a>
-                    <a href={project.link} className="text-slate-300 hover:text-slate-900 transition-colors">
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-[17px] md:text-[18px] font-semibold text-slate-700">{project.title}</h3>
+                  <div className="flex items-center gap-4 md:shrink-0">
+                    <span className="text-[14px] font-mono text-slate-400">{project.period}</span>
+                    {(project.github || project.link) && (
+                      <div className="flex gap-4">
+                        {project.github && (
+                          <a href={project.github} target="_blank" rel="noreferrer" className="text-slate-300 hover:text-slate-900 transition-colors" aria-label={`${project.title} GitHub`}>
+                            <Github className="w-4 h-4" />
+                          </a>
+                        )}
+                        {project.link && (
+                          <a href={project.link} target="_blank" rel="noreferrer" className="text-slate-300 hover:text-slate-900 transition-colors" aria-label={`${project.title} link`}>
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
-                <p className="text-slate-500 leading-relaxed text-[15px] mb-3 max-w-lg">
+                <p className="text-slate-500 leading-relaxed text-[15px] pr-28 mb-3">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-x-4 gap-y-2">
@@ -230,23 +250,28 @@ export default function App() {
         {/* Section: Hobbies */}
         <section className="mt-8 mb-12">
           <h2 className="text-[20px] md:text-[22px] font-semibold uppercase tracking-wider text-teal-700 mb-4">Hobbies</h2>
-          <div className="space-y-2 text-[15px] text-slate-700">
-            <div>• Korean dramas: Super fan. If you have any recommendations, please reach out, I love discovering new series!</div>
-            <div>• Knitting & crochet: Beginner and still struggling, but enjoying the process and small wins.</div>
-            <div>• Cooking: Mostly Asian food; learning Danish cuisine and trying my hand at baking.</div>
+          <div className="space-y-2">
+            <p className="text-slate-500 leading-relaxed text-[15px] pr-28">
+              • Korean dramas: If you have any recommendations, please reach out, I love discovering new series!
+            </p>
+            <p className="text-slate-500 leading-relaxed text-[15px] pr-28">
+              • Knitting & crochet: Beginner and still struggling, but enjoying the process and small wins.
+            </p>
+            <p className="text-slate-500 leading-relaxed text-[15px] pr-28">
+              • Cooking: Mostly Asian food; learning Danish cuisine and trying my hand at baking.
+            </p>
           </div>
         </section>
 
         {/* Footer */}
         <footer className="pt-16 border-t border-slate-200">
-          <div className="flex justify-between items-center">
+          <div className="space-y-1">
             <p className="text-[14px] text-slate-400">
               © 2026 Zoey (Xinyi) Zhang
             </p>
-            <a href="https://www.linkedin.com/in/xinyi-zhang-a23594243" target="_blank" rel="noreferrer" className="text-[14px] font-bold uppercase tracking-widest text-slate-900 hover:text-teal-600 transition-colors flex items-center gap-2">
-              Contact
-              <ArrowRight className="w-3 h-3" />
-            </a>
+            <p className="text-[14px] text-slate-400">
+              Last updated: Late March 2026
+            </p>
           </div>
         </footer>
 
