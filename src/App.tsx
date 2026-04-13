@@ -5,6 +5,8 @@ import {
   Mail, 
   ExternalLink
 } from "lucide-react";
+import profileImage from "../assets/IMG_0594.JPG";
+import cvPdf from "../assets/ZoeyZhang_Software Developer.pdf";
 
 type Project = {
   title: string;
@@ -115,13 +117,13 @@ export default function App() {
         <aside className="mb-8 md:mb-0 md:w-72 flex-shrink-0 md:sticky md:top-0 md:h-screen">
           <div className="md:flex md:flex-col md:justify-center md:pt-8">
             {/* Using uploaded photo in assets */}
-            <img src="/assets/IMG_0594.JPG" alt="Zoey (Xinyi) Zhang" className="w-40 h-40 rounded-full object-cover object-center mb-4 bg-slate-100" />
+            <img src={profileImage} alt="Zoey (Xinyi) Zhang" className="w-40 h-40 rounded-full object-cover object-center mb-4 bg-slate-100" />
 
             <h2 className="text-[21px] font-bold tracking-tight mb-2">Zoey (Xinyi) Zhang</h2>
             <p className="text-[15px] text-slate-600 mb-4"> A full-time cat servant of my naughty boy, coding for cans.</p>
 
             <div className="flex flex-col gap-3">
-              <a href="/assets/ZoeyZhang_Software Developer.pdf" target="_blank" rel="noreferrer" className="text-[15px] font-semibold inline-flex items-center gap-2 bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-500 hover:opacity-90 transition-all" aria-label="Download CV">
+              <a href={cvPdf} target="_blank" rel="noreferrer" className="text-[15px] font-semibold inline-flex items-center gap-2 bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-500 hover:opacity-90 transition-all" aria-label="Download CV">
                 <ExternalLink className="w-4 h-4 text-teal-600" />
                 <span>Download CV</span>
               </a>
