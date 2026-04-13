@@ -41,33 +41,42 @@ const SKILLS = [
 const EXPERIENCE = [
   {
     company: "Rimlys",
-    role: "Software Engineer, Aarhus, Denmark",
+    role: "Software Engineer",
+    location: "Aarhus, Denmark",
     period: "Dec.2025 - Present",
-    description: "Built Klar (Danish-learning app) with a Next.js frontend and Rust backend and deployed it on GCP with automated CI/CD. Implemented spaced-repetition flashcards, daily practice flows, and AI-generated content with TTS."
+  description: "Built and launched Danish learning app Klar, implemented vocabulary flashcards, daily practice flows, and AI-generated content with TTS.",
+  link: "https://klar.rimlys.org/home"
   },
   {
     company: "TikTok / Bytedance",
     role: "Software Engineer (Intern)",
+    location: "Beijing, China",
     period: "Jun.2024 - Mar.2025",
-    description: "Optimized a V8-based JS runtime (JASH) using ExternalString and CodeCache for ~5× speedup and lower memory, and implemented C++↔JS bindings. Refactored modules and improved CI/CD reliability, resolving cross-platform build and test failures."
+  description: "Optimized a V8-based JS runtime (JASH) with ExternalString and CodeCache for ~5× speedup and lower memory, implemented C++↔JS bindings, and improved CI/CD to fix cross-platform build/test failures."
   },
   {
-    company: "MartixPort (Remote, Singapore)",
-    role: "Quantitative Developer (Contract)",
+    company: "MartixPort (Rebranded as Bit Quant by 2026)",
+    role: "Quantitative Developer (Part-time)",
+    location: "Remote (Singapore)",
     period: "May.2024 - Nov.2024",
-    description: "Built a real-time risk-control gateway, asynchronous WebSocket market-data pipeline, and an OMS for pre-trade checks and order routing. Implemented shared-memory IPC for sub-microsecond messaging and managed AWS infrastructure plus monitoring/alerting."
+  description: "Built a real-time risk-control gateway, async WebSocket market-data pipeline, and OMS for pre-trade checks and order routing; implemented shared-memory IPC for sub-microsecond messaging and managed AWS infra with monitoring/alerting.",
+  
   },
   {
     company: "Xcalibyte (acquired by Alibaba)",
     role: "Software Engineer (Intern)",
+    location: "Beijing, China",
     period: "Nov.2022 - Nov.2023",
-    description: "Extended a Clang-based SAST (Labrador) with AST visitors and implemented MISRA C/C++ rules, achieving zero false positives and ISO 26262 certification. Built CI/CD pipelines and integrated the scanner into enterprise workflows."
+  description: "Extended a Clang-based SAST (Labrador) with AST visitors, implemented MISRA C/C++ rules achieving zero false positives and ISO 26262 certification, and built CI/CD to integrate the scanner into enterprise workflows.",
+  link: "https://github.com/xcalcc/labrador"
   },
   {
     company: "Chaitin Technology (Alibaba subsidiary)",
     role: "Cybersecurity Engineer (Intern)",
+    location: "Beijing, China",
     period: "Oct.2021 - Apr.2022",
-    description: "Built a VM-based semantic-analysis WAF for vulnerability scanning and customized JSON parsing for robustness. Implemented distributed async checks with Redis, ported the VM to ARM, explored WASM integration, and deployed services with Docker/Kubernetes."
+    description: "Developed a VM-based semantic WAF for vulnerability scanning with robust JSON parsing, implemented distributed async checks with Redis, ported the VM to ARM, explored WASM, and deployed services via Docker/Kubernetes.",
+  link: "https://github.com/chaitin/SafeLine"
   }
 ];
 
@@ -76,13 +85,13 @@ const EDUCATION = [
     institution: "Nankai University (NKU), Tianjin, China",
     degree: "Master of Computer Science",
     period: "Sep.2022 - Jun.2025",
-    description: "Graduate studies in Computer Science."
+    description: "Recipient of Outstanding Graduate Scholarship."
   },
   {
     institution: "University of Science and Technology Beijing (USTB), Beijing, China",
     degree: "Bachelor of Computer Science",
     period: "Sep.2018 - Jun.2022",
-    description: "GPA: 3.87/4.00 — Ranking: 4/163 (top 2.50%)."
+    description: "GPA: 3.87/4.00 Ranking: 4/163 (top 2.50%)."
   }
 ];
 
@@ -95,7 +104,8 @@ export default function App() {
         <header className="mb-16">
           <h1 className="text-3xl font-bold tracking-tight mb-4">Zoey (Xinyi) Zhang</h1>
           <p className="text-lg text-slate-500 leading-relaxed">
-            Software Developer.
+            Hi, I'm Zoey 👋 and I'm a Backend/Full‑Stack engineer focused on building scalable, reliable and high-performance systems. I have a strong background in system design, cloud infrastructure, and performance optimization. Recently, I’ve been exploring interesting usage of AI to enhance developer productivity and user experiences.
+
           </p>
           <div className="mt-8 flex items-center gap-6">
             <a href="/assets/ZoeyZhang_Software Developer.pdf" target="_blank" rel="noreferrer" className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-emerald-500 hover:opacity-80 transition-all flex items-center gap-2">
@@ -106,9 +116,6 @@ export default function App() {
               <Linkedin className="w-4 h-4" />
               LinkedIn
             </a>
-            <a href="#" className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-emerald-500 hover:opacity-80 transition-all">
-              GitHub
-            </a>
           </div>
         </header>
 
@@ -118,11 +125,23 @@ export default function App() {
           <div className="space-y-10">
             {EXPERIENCE.map((exp) => (
               <div key={exp.company}>
-                <div className="flex justify-between items-baseline mb-1">
-                  <h3 className="text-base font-semibold">{exp.role}</h3>
+                <div className="flex justify-between items-start mb-1">
+                  <div>
+                    {exp.link ? (
+                      <a href={exp.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:underline">
+                        <span className="text-sm md:text-base font-semibold text-slate-700">{exp.company}</span>
+                        <ExternalLink className="w-3 h-3 text-slate-400" />
+                      </a>
+                    ) : (
+                      <span className="text-sm md:text-base font-semibold text-slate-700">{exp.company}</span>
+                    )}
+                      <div className="text-sm text-slate-500">{exp.role}</div>
+                      {exp.location && (
+                        <div className="text-xs text-slate-400 mt-1">{exp.location}</div>
+                      )}
+                  </div>
                   <span className="text-xs font-mono text-slate-400">{exp.period}</span>
                 </div>
-                <div className="text-sm text-slate-400 mb-3">{exp.company}</div>
                 <p className="text-slate-500 leading-relaxed text-sm max-w-lg">
                   {exp.description}
                 </p>
