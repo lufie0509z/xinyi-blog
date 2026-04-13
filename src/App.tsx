@@ -97,27 +97,42 @@ const EDUCATION = [
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-brand-100 selection:text-brand-900">
-      <div className="max-w-2xl mx-auto px-6 py-16 md:py-24">
+  <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-teal-100 selection:text-teal-900">
+  <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 md:flex md:items-start md:gap-12">
         
-        {/* Header */}
-        <header className="mb-16">
-          <h1 className="text-3xl font-bold tracking-tight mb-4">Zoey (Xinyi) Zhang</h1>
-          <p className="text-lg text-slate-500 leading-relaxed">
-            Hi, I'm Zoey 👋 and I'm a Backend/Full‑Stack engineer focused on building scalable, reliable and high-performance systems. I have a strong background in system design, cloud infrastructure, and performance optimization. Recently, I’ve been exploring interesting usage of AI to enhance developer productivity and user experiences.
+        {/* Left column (always visible on md+). On small screens it's stacked above content. */}
+        <aside className="mb-8 md:mb-0 md:w-72 flex-shrink-0 md:sticky md:top-0 md:h-screen">
+          <div className="md:flex md:flex-col md:justify-center md:pt-8">
+            {/* Replace /assets/photo.jpg with your real photo file or keep empty */}
+            <img src="/assets/photo.jpg" alt="Zoey (Xinyi) Zhang" className="w-36 h-36 rounded-full object-cover mb-4 bg-slate-100" />
 
-          </p>
-          <div className="mt-8 flex items-center gap-6">
-            <a href="/assets/ZoeyZhang_Software Developer.pdf" target="_blank" rel="noreferrer" className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-emerald-500 hover:opacity-80 transition-all flex items-center gap-2">
-              <ExternalLink className="w-4 h-4" />
-              Download CV
-            </a>
-            <a href="https://www.linkedin.com/in/xinyi-zhang-a23594243" target="_blank" rel="noreferrer" className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-emerald-500 hover:opacity-80 transition-all flex items-center gap-2">
-              <Linkedin className="w-4 h-4" />
-              LinkedIn
-            </a>
+            <h2 className="text-xl font-bold tracking-tight mb-2">Zoey (Xinyi) Zhang</h2>
+            <p className="text-sm text-slate-600 mb-4"> A full-time cat servant of my naughty boy | coding for cans.</p>
+
+            <div className="flex flex-col gap-3">
+              <a href="/assets/ZoeyZhang_Software Developer.pdf" target="_blank" rel="noreferrer" className="text-sm font-semibold inline-flex items-center gap-2 bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-500 hover:opacity-90 transition-all" aria-label="Download CV">
+                <ExternalLink className="w-4 h-4 text-teal-600" />
+                <span>Download CV</span>
+              </a>
+              <a href="https://www.linkedin.com/in/xinyi-zhang-a23594243" target="_blank" rel="noreferrer" className="text-sm font-semibold inline-flex items-center gap-2 bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-500 hover:opacity-90 transition-all" aria-label="LinkedIn">
+                <Linkedin className="w-4 h-4 text-teal-600" />
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/lufie0509z" target="_blank" rel="noreferrer" className="text-sm font-semibold inline-flex items-center gap-2 bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-500 hover:opacity-90 transition-all" aria-label="GitHub">
+                <Github className="w-4 h-4 text-teal-600" />
+                <span>GitHub</span>
+              </a>
+              {/* Replace the email placeholder below with your real email if you want a mailto link here */}
+              <a href="mailto: zzzzzxy.zhang@gmail.com" className="text-sm font-semibold inline-flex items-center gap-2 bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-500 hover:opacity-90 transition-all" aria-label="Email">
+                <Mail className="w-4 h-4 text-teal-600" />
+                <span>Email</span>
+              </a>
+            </div>
           </div>
-        </header>
+        </aside>
+
+        {/* Right column (main, scrollable) */}
+        <main className="flex-1">
 
         {/* Section: Work Experience */}
         <section className="mb-16">
@@ -226,12 +241,14 @@ export default function App() {
             <p className="text-xs text-slate-400">
               © 2026 Zoey (Xinyi) Zhang
             </p>
-            <a href="https://www.linkedin.com/in/xinyi-zhang-a23594243" target="_blank" rel="noreferrer" className="text-xs font-bold uppercase tracking-widest text-slate-900 hover:text-brand-600 transition-colors flex items-center gap-2">
+            <a href="https://www.linkedin.com/in/xinyi-zhang-a23594243" target="_blank" rel="noreferrer" className="text-xs font-bold uppercase tracking-widest text-slate-900 hover:text-teal-600 transition-colors flex items-center gap-2">
               Contact
               <ArrowRight className="w-3 h-3" />
             </a>
           </div>
         </footer>
+
+        </main>
 
       </div>
     </div>
