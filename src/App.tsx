@@ -103,11 +103,11 @@ export default function App() {
         {/* Left column (always visible on md+). On small screens it's stacked above content. */}
         <aside className="mb-8 md:mb-0 md:w-72 flex-shrink-0 md:sticky md:top-0 md:h-screen">
           <div className="md:flex md:flex-col md:justify-center md:pt-8">
-            {/* Replace /assets/photo.jpg with your real photo file or keep empty */}
-            <img src="/assets/photo.jpg" alt="Zoey (Xinyi) Zhang" className="w-36 h-36 rounded-full object-cover mb-4 bg-slate-100" />
+            {/* Using uploaded photo in assets */}
+            <img src="/assets/IMG_0594.JPG" alt="Zoey (Xinyi) Zhang" className="w-36 h-36 rounded-full object-cover object-center mb-4 bg-slate-100" />
 
             <h2 className="text-xl font-bold tracking-tight mb-2">Zoey (Xinyi) Zhang</h2>
-            <p className="text-sm text-slate-600 mb-4"> A full-time cat servant of my naughty boy | coding for cans.</p>
+            <p className="text-sm text-slate-600 mb-4"> A full-time cat servant of my naughty boy, coding for cans.</p>
 
             <div className="flex flex-col gap-3">
               <a href="/assets/ZoeyZhang_Software Developer.pdf" target="_blank" rel="noreferrer" className="text-sm font-semibold inline-flex items-center gap-2 bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-500 hover:opacity-90 transition-all" aria-label="Download CV">
@@ -136,8 +136,8 @@ export default function App() {
 
         {/* Section: Work Experience */}
         <section className="mb-16">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-700 mb-8">Work Experience</h2>
-          <div className="space-y-10">
+          <h2 className="text-lg md:text-xl font-semibold uppercase tracking-wider text-teal-700 mb-8">Work Experience</h2>
+          <div className="space-y-6">
             {EXPERIENCE.map((exp) => (
               <div key={exp.company}>
                 <div className="flex justify-between items-start mb-1">
@@ -157,7 +157,7 @@ export default function App() {
                   </div>
                   <span className="text-xs font-mono text-slate-400">{exp.period}</span>
                 </div>
-                <p className="text-slate-500 leading-relaxed text-sm max-w-lg">
+                <p className="text-slate-500 leading-relaxed text-sm pr-28">
                   {exp.description}
                 </p>
               </div>
@@ -167,7 +167,7 @@ export default function App() {
 
         {/* Section: Education */}
         <section className="mb-16">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-700 mb-8">Education</h2>
+          <h2 className="text-lg md:text-xl font-semibold uppercase tracking-wider text-teal-700 mb-8">Education</h2>
           <div className="space-y-8">
             {EDUCATION.map((edu) => (
               <div key={edu.institution}>
@@ -186,7 +186,7 @@ export default function App() {
 
         {/* Section: Projects */}
         <section className="mb-16">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-700 mb-8">Projects</h2>
+          <h2 className="text-lg md:text-xl font-semibold uppercase tracking-wider text-teal-700 mb-8">Projects</h2>
           <div className="space-y-10">
             {PROJECTS.map((project) => (
               <div key={project.title}>
@@ -218,7 +218,7 @@ export default function App() {
 
         {/* Section: Skills */}
         <section className="mb-16">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-700 mb-8">Skills</h2>
+          <h2 className="text-lg md:text-xl font-semibold uppercase tracking-wider text-teal-700 mb-8">Skills</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10">
             {SKILLS.map((skillGroup) => (
               <div key={skillGroup.category}>
